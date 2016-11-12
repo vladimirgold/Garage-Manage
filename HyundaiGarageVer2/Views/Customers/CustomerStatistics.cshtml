@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HyundaiGarageVer2.ViewModels.CustomTreatCount>
+
+@{
+    ViewBag.Title = "Customer by Treatments Statistics";
+}
+
+<h2>Customer by Treatment Statistics</h2>
+
+<hr />
+<dl class="dl-horizontal">
+
+    <dd>
+        <table class="table">
+            <tr>
+                <th>Customer First Name</th>
+                <th>Amount of Treatments</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerFirstName)
+                    </td>
+
+                    <td>
+                        @item.TreatCount
+                    </td>
+                </tr>
+            }
+        </table>
+    </dd>
+
+</dl>

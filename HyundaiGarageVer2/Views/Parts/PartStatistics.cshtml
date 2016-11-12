@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HyundaiGarageVer2.ViewModels.PartsCountSimple>
+
+@{
+    ViewBag.Title = "Parts Statistics";
+}
+
+<h2>Parts Statistics</h2>
+
+<hr />
+<dl class="dl-horizontal">
+
+    <dd>
+        <table class="table">
+            <tr>
+                <th>Part Name</th>
+                <th>Amount</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartName)
+                    </td>
+                    <td>
+                        @item.PartsCount
+                    </td>
+                </tr>
+            }
+        </table>
+    </dd>
+
+</dl>
+

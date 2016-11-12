@@ -1,0 +1,78 @@
+﻿@model HyundaiGarageVer2.Models.Treatment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Treatment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.CarID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.CarID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.Model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentDate)
+        </dd>
+
+        <br/>
+        <dt>
+            Customer Details
+        </dt>
+
+
+
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                </tr>
+               
+                
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Car.Customer.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Car.Customer.Phone)
+                        </td>
+                    </tr>
+               
+            </table>
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TreatmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
